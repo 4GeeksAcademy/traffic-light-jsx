@@ -1,26 +1,40 @@
-import React from "react";
-
+import React, { useState } from "react";
 //include images into your bundle
 import rigoImage from "../../img/rigo-baby.jpg";
-
 //create your first component
 const Home = () => {
+const [ red , setRed ] = useState("red")
+const [ yellow , setYellow ] = useState("yellow")
+const [ green , setGreen ] = useState("green")
+	const addGlow = (color) => {
+		setRed("red");
+		setYellow("yellow");
+		setGreen("green");
+		
+		switch (color) {
+			case "red":
+				  setRed("red glow");
+				 
+			break;
+			case "yellow" :
+				  setYellow("yellow glow");
+				 
+			break;
+			case "green" :
+				  setGreen("green glow");
+				 
+			break;
+		}
+	}
 	return (
-		<div className="text-center">
-			<h1 className="text-center mt-5">Hello Rigo!</h1>
-			<p>
-				<img src={rigoImage} />
-			</p>
-			<a href="#" className="btn btn-success">
-				If you see this green button... bootstrap is working...
-			</a>
-			<p>
-				Made by{" "}
-				<a href="http://www.4geeksacademy.com">4Geeks Academy</a>, with
-				love!
-			</p>
+		<div className="container" style={{justifyContent: 'center'}}>
+			<div className="trafficTop mx-auto" style={{width: '16px', height: '118px', backgroundColor: 'black'}}>#</div>
+			<div className="trafficBottom mx-auto border rounded p-2" style={{width: '100px', height: '250px', backgroundColor: 'black'}}>
+				<div className={red} onClick={() => addGlow('red')}></div>
+				<div className={yellow} onClick={() => addGlow('yellow')}></div>
+				<div className={green} onClick={() => addGlow('green')}></div>
+			</div>
 		</div>
 	);
 };
-
 export default Home;
