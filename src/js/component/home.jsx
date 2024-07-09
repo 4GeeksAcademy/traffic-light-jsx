@@ -28,7 +28,7 @@ const [ green , setGreen ] = useState("green")
 	}
 	return (
 		<div className="container" style={{justifyContent: 'center'}}>
-			<div className="trafficTop mx-auto" style={{width: '16px', height: '118px', backgroundColor: 'black'}}>#</div>
+			<div className="trafficTop mx-auto" style={{width: '20px', height: '128px', backgroundColor: 'black'}}>#</div>
 			<div className="trafficBottom mx-auto border rounded p-2" style={{width: '100px', height: '250px', backgroundColor: 'black'}}>
 				<div className={red} onClick={() => addGlow('red')}></div>
 				<div className={yellow} onClick={() => addGlow('yellow')}></div>
